@@ -59,48 +59,55 @@
       </div>
     </section>
     <section id="gallery">
-      <div id="piio-gallery-indicators">
-        <img class="image" data-image="/img/indicators/rack-of-blank-tshirts.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="rack-of-blank-tshirts.jpg">
-        <img class="image" data-image="/img/indicators/teal-t-shirt.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="teal-t-shirt.jpg">
-          <img class="image" data-image="/img/indicators/blue-t-shirt.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="blue-t-shirt">
-          <img class="image" data-image="/img/indicators/purple-t-shirt.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="purple-t-shirt">
-          <img class="image" data-image="/img/indicators/red-t-shirt.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-t-shirt">
+      <div id="piio-gallery-thumbnails">
+        <img class="image" data-image="/img/thumbnails/line-of-earbud-cases.jpg"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="line-of-earbud-cases.jpg">
+        <img class="image" data-image="/img/thumbnails/earbud-circle.jpg"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="earbud-circle">
+        <img class="image" data-image="/img/thumbnails/yellow-earbuds-on-white.jpg"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="yellow-earbuds-on-white">
+        <img class="image" data-image="/img/thumbnails/red-earbuds-on-red-surface.jpg"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-earbuds-on-red-surface">
+        <img class="image" data-image="/img/thumbnails/red-earbuds-and-smartphone.jpg"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-earbuds-and-smartphone">
+        <img class="image" data-image="/img/thumbnails/red-earbuds-in-case.jpg"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-earbuds-in-case">
+        <img class="image" data-image="/img/thumbnails/close-up-of-red-earbuds.jpg"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="close-up-of-red-earbuds">
       </div>
     </section>
     <section id="code">
     </section>
   </div>
   <style media="screen">
-    #piio-gallery-indicators{
-      max-width: 90%;
-      margin: 50px auto;
+    #piio-gallery-thumbnails{
+      width: 800px;
+      margin: 30px auto;
     }
-    #piio-gallery-indicators .arrow svg{
+    #piio-gallery-thumbnails .arrow svg{
       display: unset
     }
   </style>
   <script type="text/javascript">
     const options = {
       aspectRatio: "3:2", 
-      carouselStyle: "indicators",
-      carouselOffset: 30,
-      carouselPosition: "left",
-      mainNavigation: "circle",
-      gallerySelector: "#piio-gallery-indicators",
+      carouselStyle: "thumbnails",
+      carouselOffset: 15,
+      mainNavigation: "radius",
+      gallerySelector: "#piio-gallery-thumbnails",
       themeProps: {
-        background: "hsla(0, 0%, 30%, 1)",
-        color: "hsla(0, 100%, 100%, 1)",
+        background: "hsla(50, 100%, 70%, 1)",
+        color: "hsla(0, 0%, 20%, 1)",
       },
       transition: "slide",
-      indicatorProps:{
-        shape: "circle",
-        size: 16,
-        spacing: 8,
+      thumbnailProps: {
+        height: 80,
+        margin: 10,
+        navigationShape: "radius",
+        selectedBorderPosition: "all",
+        selectedBorderWidth: 4,
+        selectedStyle: "border",
+        width: 120,
       },
       zoomProps: {
         type: "inline",
