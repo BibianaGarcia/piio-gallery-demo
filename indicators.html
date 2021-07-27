@@ -61,18 +61,80 @@
     <section id="gallery">
       <div id="piio-gallery-indicators">
         <img class="image" data-image="/img/indicators/rack-of-blank-tshirts.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="rack-of-blank-tshirts.jpg">
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="rack-of-blank-tshirts.jpg">
         <img class="image" data-image="/img/indicators/teal-t-shirt.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="teal-t-shirt.jpg">
-          <img class="image" data-image="/img/indicators/blue-t-shirt.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="blue-t-shirt">
-          <img class="image" data-image="/img/indicators/purple-t-shirt.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="purple-t-shirt">
-          <img class="image" data-image="/img/indicators/red-t-shirt.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-t-shirt">
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="teal-t-shirt.jpg">
+        <img class="image" data-image="/img/indicators/blue-t-shirt.jpg"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="blue-t-shirt">
+        <img class="image" data-image="/img/indicators/purple-t-shirt.jpg"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="purple-t-shirt">
+        <img class="image" data-image="/img/indicators/red-t-shirt.jpg"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-t-shirt">
       </div>
     </section>
-    <section id="code">
+    <section id="code" class="p-6">
+      <pre>
+        <code class="language-html">
+          // HTML
+            &lt;div id="piio-gallery-indicators"&gt;
+              &lt;img class="image" data-image="/img/indicators/rack-of-blank-tshirts.jpg"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="rack-of-blank-tshirts.jpg"&gt;
+              &lt;img class="image" data-image="/img/indicators/teal-t-shirt.jpg"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="teal-t-shirt.jpg"&gt;
+              &lt;img class="image" data-image="/img/indicators/blue-t-shirt.jpg"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="blue-t-shirt"&gt;
+              &lt;img class="image" data-image="/img/indicators/purple-t-shirt.jpg"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="purple-t-shirt"&gt;
+              &lt;img class="image" data-image="/img/indicators/red-t-shirt.jpg"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-t-shirt"&gt;
+            &lt;/div&gt;
+        </code>
+      </pre>
+      <pre>
+        <code class="language-css">
+          // Css 
+          <style media="screen">
+            #piio-gallery-indicators{
+              max-width: 90%;
+              margin: 50px auto;
+            }
+            #piio-gallery-indicators .arrow svg{
+              display: unset
+            }
+          </style>
+        </code>
+      </pre>
+      <pre>
+        <code class="language-javascript">
+          // Javascript
+          <script script type="text/plain" class="language-javascript">
+            const options = {
+              aspectRatio: "3:2", 
+              carouselStyle: "indicators",
+              carouselOffset: 30,
+              carouselPosition: "left",
+              mainNavigation: "circle",
+              gallerySelector: "#piio-gallery-indicators",
+              themeProps: {
+                background: "hsla(0, 0%, 30%, 1)",
+                color: "hsla(0, 100%, 100%, 1)",
+              },
+              transition: "slide",
+              indicatorProps:{
+                shape: "circle",
+                size: 16,
+                spacing: 8,
+              },
+              zoomProps: {
+                type: "inline",
+              },
+            };
+        
+            const g = piioGallery.init(options);
+            g.render();
+          </script>
+        </code>
+      </pre>
     </section>
   </div>
   <style media="screen">
@@ -110,5 +172,6 @@
     const g = piioGallery.init(options);
     g.render();
   </script>
+  <script src="/js/prism.js"></script>
 </body>
 </html>
