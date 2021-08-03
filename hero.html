@@ -5,18 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>piio Gallery - hero</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png"></link>
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png"></link>
-  <link href="/piio-gallery-demo-2/styles/prism.css" rel="stylesheet" />
-  <link href = "/piio-gallery-demo-2/styles/app.css" rel="stylesheet">
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <link href = "/piio-gallery-demo-2/styles/styles.css" rel="stylesheet">
-  <script src="/piio-gallery-demo-2/js/piioGallery.js" type="text/javascript"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+ <link href="/styles/prism.css" rel="stylesheet" />
+ <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link href = "/styles/app.css" rel="stylesheet">
+  <link href = "/styles/styles.css" rel="stylesheet">
+  
+  <script src="/js/prism.js"></script>
+  <script src="/js/piioGallery.js" type="text/javascript"></script>
+  <script src="/js/index.js" type="text/javascript"></script>
 </head>
-<body>
-  <div className="max-w-7xl px-4 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
+<body class="vscode-body vscode-light">
+  <div class="max-w-7xl px-4 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
     <section id="navbar" class="relative bg-white flex justify-between items-center">
-      <div class="w-full flex justify-between items-center px-4 py-6 sm:px-6 lg:justify-end">
+      <div class="relative w-full flex justify-between items-center px-4 py-6 sm:px-6">
         <div>
           <a href="https://piio.co/" class="flex">
             <span class="sr-only">Piio</span>
@@ -30,7 +33,7 @@
               </svg>
           </a>
         </div>
-        <div class="-mr-2 -my-2 lg:hidden">
+        <div id="hamburger-menu" class="-mr-2 -my-2 lg:hidden" onclick="toggleNavbar()">
           <button class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" 
           id="headlessui-popover-button-5" 
           type="button">
@@ -42,35 +45,45 @@
             </svg>
           </button>
         </div>
-        <div class="hidden md:flex-1 lg:flex lg:items-center lg:justify-end">
-          <nav class="flex space-x-10 lg:justify-between">
-            <a href="/piio-gallery-demo-2/" class="text-base font-medium text-gray-500 hover:text-gray-900" ><span>Gallery</span>
+        <div class="absolute z-50 w-full bg-white top-0 inset-x-0 md:max-w-md md:inset-x-auto  md:right-0 p-2 transition transform origin-top-right lg:flex lg:items-center lg:justify-end lg:relative lg:p-0">
+          <nav id="navbar-links"class="pt-5 pb-6 px-5 flex flex-col justify-end shadow-lg ring-1 ring-black ring-opacity-5 bg-white hidden lg:flex lg:flex-row lg:shadow-none lg:ring-0 lg:pt-0 lg:pb-0 lg:px-0 ">   
+            <div onclick="toggleNavbar()" class="flex justify-end">
+              <button  class="bg-white p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 lg:hidden" type="button" tabindex="0">
+                <span class="sr-only">Close menu</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>  
+            </div>   
+            <a href="/" class=" p-5 py-4 block hover:bg-gray-50 text-base font-medium text-gray-900 lg:text-gray-500 lg:hover:text-gray-900 lg:m-0 lg:p-0 lg:pl-8 lg:hover:bg-transparent" ><span>Gallery</span>
             </a>
-            <a href="/piio-gallery-demo-2/thumbnails.html" class="text-base font-medium text-gray-500 hover:text-gray-900" ><span>Thumbnails</span>
+            <a href="/thumbnails.html" class=" p-5 py-4 block hover:bg-gray-50 text-base font-medium text-gray-900 lg:text-gray-500 lg:hover:text-gray-900 lg:m-0 lg:p-0 lg:pl-8 lg:hover:bg-transparent" ><span>Thumbnails</span>
             </a>
-            <a href="/piio-gallery-demo-2/indicators.html" class="text-base font-medium text-gray-500 hover:text-gray-900" ><span>Indicators</span>
+            <a href="/indicators.html" class=" p-5 py-4 block hover:bg-gray-50 text-base font-medium text-gray-900 lg:text-gray-500 lg:hover:text-gray-900 lg:m-0 lg:p-0 lg:pl-8 lg:hover:bg-transparent" ><span>Indicators</span>
             </a>
-            <a href="/piio-gallery-demo-2/hero.html" class="text-base font-medium text-gray-500 hover:text-gray-900" ><span>Hero</span>
+            <a href="/hero.html" class=" p-5 py-4 block hover:bg-gray-50 text-base font-medium text-gray-900 lg:text-gray-500 lg:hover:text-gray-900 lg:m-0 lg:p-0 lg:pl-8 lg:hover:bg-transparent" ><span>Hero</span>
             </a>
-            <a href="/piio-gallery-demo-2/variants.html" class="text-base font-medium text-gray-500 hover:text-gray-900" ><span>Variants</span>
+            <a href="/variants.html" class=" p-5 py-4 block hover:bg-gray-50 text-base font-medium text-gray-900 lg:text-gray-500 lg:hover:text-gray-900 lg:m-0 lg:p-0 lg:pl-8 lg:hover:bg-transparent" ><span>Variants</span>
             </a>
           </nav>
         </div>
       </div>
     </section>
-    <section id="gallery">
-      <div id="piio-gallery-hero">
-        <img class="woman-wearing-stripes" data-image="/img/hero/woman-wearing-stripes.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="woman-wearing-stripes">
-          <img class="image" data-image="/img/hero/fashion-toronto-watch.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="fashion-toronto-watch">
-          <img class="image" data-image="/img/hero/father-daughter-fashion.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="father-daughter-fashion">
-          <img class="image" data-image="/img/hero/woman-poses-against-blue.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="woman-poses-against-blue">
-      </div>
-    </section>
-    <section id="code" class="p-6">
+  </div>
+  <section id="gallery">
+    <div id="piio-gallery-hero">
+      <img class="woman-wearing-stripes" data-image="/img/hero/woman-wearing-stripes.jpg"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="woman-wearing-stripes">
+        <img class="image" data-image="/img/hero/fashion-toronto-watch.jpg"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="fashion-toronto-watch">
+        <img class="image" data-image="/img/hero/father-daughter-fashion.jpg"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="father-daughter-fashion">
+        <img class="image" data-image="/img/hero/woman-poses-against-blue.jpg"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="woman-poses-against-blue">
+    </div>
+  </section>
+  <div class="max-w-7xl px-4 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
+    <section id="code" class="px-4 mt-16 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
       <pre>
         <code class="language-html">
           // HTML
@@ -204,6 +217,5 @@
     const g = piioGallery.init(options);
     g.render();
   </script>
-  <script src="/piio-gallery-demo-2/js/prism.js"></script>
 </body>
 </html>

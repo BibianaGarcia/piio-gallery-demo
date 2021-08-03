@@ -7,25 +7,19 @@
   <title>piio Gallery</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png"></link>
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png"></link>
+ <link href="/styles/prism.css" rel="stylesheet" />
   <link href = "/styles/app.css" rel="stylesheet">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <link href = "/styles/styles.css" rel="stylesheet">
+  
+  <script src="/js/prism.js"></script>
   <script src="/js/piioGallery.js" type="text/javascript"></script>
-  <!-- <script type="text/javascript">
-    window.piioData = {
-      domain: 'http://localhost/',
-      appKey: 'tkkjic',
-      userAgentDetection: true,
-      avif: true
-    }
-  </script>
-  <script src="/js/piio.min.js" type="text/javascript"></script> -->
-  <script src="/js/piioGallery.js" type="text/javascript"></script>
+  <script src="/js/index.js" type="text/javascript"></script>
 </head>
-<body>
-  <div className="max-w-7xl px-4 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
+<body class="vscode-body vscode-light">
+  <div class="max-w-7xl px-4 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
     <section id="navbar" class="relative bg-white flex justify-between items-center">
-      <div class="w-full flex justify-between items-center px-4 py-6 sm:px-6 lg:justify-end">
+      <div class="relative w-full flex justify-between items-center px-4 py-6 sm:px-6">
         <div>
           <a href="https://piio.co/" class="flex">
             <span class="sr-only">Piio</span>
@@ -39,7 +33,7 @@
               </svg>
           </a>
         </div>
-        <div class="-mr-2 -my-2 lg:hidden">
+        <div id="hamburger-menu" class="-mr-2 -my-2 lg:hidden" onclick="toggleNavbar()">
           <button class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" 
           id="headlessui-popover-button-5" 
           type="button">
@@ -51,91 +45,599 @@
             </svg>
           </button>
         </div>
-        <div class="hidden md:flex-1 lg:flex lg:items-center lg:justify-end">
-          <nav class="flex space-x-10 lg:justify-between">
-            <a href="/piio-gallery-demo-2/" class="text-base font-medium text-gray-500 hover:text-gray-900" ><span>Gallery</span>
+        <div class="absolute z-50 w-full bg-white top-0 inset-x-0 md:max-w-md md:inset-x-auto  md:right-0 p-2 transition transform origin-top-right lg:flex lg:items-center lg:justify-end lg:relative lg:p-0">
+          <nav id="navbar-links"class="pt-5 pb-6 px-5 flex flex-col justify-end shadow-lg ring-1 ring-black ring-opacity-5 bg-white hidden lg:flex lg:flex-row lg:shadow-none lg:ring-0 lg:pt-0 lg:pb-0 lg:px-0 ">   
+            <div onclick="toggleNavbar()" class="flex justify-end">
+              <button  class="bg-white p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 lg:hidden" type="button" tabindex="0">
+                <span class="sr-only">Close menu</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>  
+            </div>   
+            <a href="/" class=" p-5 py-4 block hover:bg-gray-50 text-base font-medium text-gray-900 lg:text-gray-500 lg:hover:text-gray-900 lg:m-0 lg:p-0 lg:pl-8 lg:hover:bg-transparent" ><span>Gallery</span>
             </a>
-            <a href="/piio-gallery-demo-2/thumbnails.html" class="text-base font-medium text-gray-500 hover:text-gray-900" ><span>Thumbnails</span>
+            <a href="/thumbnails.html" class=" p-5 py-4 block hover:bg-gray-50 text-base font-medium text-gray-900 lg:text-gray-500 lg:hover:text-gray-900 lg:m-0 lg:p-0 lg:pl-8 lg:hover:bg-transparent" ><span>Thumbnails</span>
             </a>
-            <a href="/piio-gallery-demo-2/indicators.html" class="text-base font-medium text-gray-500 hover:text-gray-900" ><span>Indicators</span>
+            <a href="/indicators.html" class=" p-5 py-4 block hover:bg-gray-50 text-base font-medium text-gray-900 lg:text-gray-500 lg:hover:text-gray-900 lg:m-0 lg:p-0 lg:pl-8 lg:hover:bg-transparent" ><span>Indicators</span>
             </a>
-            <a href="/piio-gallery-demo-2/hero.html" class="text-base font-medium text-gray-500 hover:text-gray-900" ><span>Hero</span>
+            <a href="/hero.html" class=" p-5 py-4 block hover:bg-gray-50 text-base font-medium text-gray-900 lg:text-gray-500 lg:hover:text-gray-900 lg:m-0 lg:p-0 lg:pl-8 lg:hover:bg-transparent" ><span>Hero</span>
             </a>
-            <a href="/piio-gallery-demo-2/variants.html" class="text-base font-medium text-gray-500 hover:text-gray-900" ><span>Variants</span>
+            <a href="/variants.html" class=" p-5 py-4 block hover:bg-gray-50 text-base font-medium text-gray-900 lg:text-gray-500 lg:hover:text-gray-900 lg:m-0 lg:p-0 lg:pl-8 lg:hover:bg-transparent" ><span>Variants</span>
             </a>
           </nav>
         </div>
       </div>
     </section>
-    <section id="gallery">
-      <div id="piio-gallery-hero">
-        <img class="woman-wearing-stripes" data-image="/img/hero/woman-wearing-stripes.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="woman-wearing-stripes">
-          <img class="image" data-image="/img/hero/fashion-toronto-watch.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="fashion-toronto-watch">
-          <img class="image" data-image="/img/hero/father-daughter-fashion.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="father-daughter-fashion">
-          <img class="image" data-image="/img/hero/woman-poses-against-blue.jpg"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="woman-poses-against-blue">
+    <section id="docs" class="mt-12 mx-auto max-w-7xl px-4 sm:mt-16 sm:px-6 lg:mt-24 overflow-hidden text-gray-500">
+      <div class="w-full lg:w-2/3 mb-12 sm:mb-16 lg:mb-24">
+        <h1 class="mb-3">
+          <span class="block text-sm font-semibold uppercase tracking-wide text-gray-500 sm:text-base lg:text-sm xl:text-base">
+            Welcome to Piio Gallery
+          </span>
+          <span class="mt-1 block text-4xl tracking-tight font-extrabold sm:text-5xl xl:text-5xl max-w-md">
+            <span class="block text-gray-900 ">Fast, responsive and touch enabled</span>
+            <span class="block text-blue-600">galleries</span>
+          </span>
+        </h1>
+        <p class="mt-10 lg:mt-10 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+          Free open-source software, which enables you to deliver the best display of your products in your website.        
+        </p>
+        <div class="mt-10 sm:flex lg:justify-start">
+          <div class="shadow">
+            <a
+              href="#"
+              class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
+            >
+              Download
+            </a>
+          </div>
+        </div>
       </div>
+      <div class="mt-12 sm:mt-16 lg:mt-24 overflow-hidden">
+        <div class="mb-24">
+          <h2 id="installation" class="mt-2 mb-8 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Installation</h2>
+          <div class="mb-16">
+            <h3 id="add-piio-gallery-into-your-html-head" class="text-xl font-semibold text-gray-700">1. Add piio Gallery into your HTML head</h3>
+            <p>On your HTML file add piio.css and piio.js within the <code>&lt;head&gt;</code> tag like this:</p>
+            <pre class="mt-2 mb-4">
+              <code class="language-html">
+                <div>    
+                <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;../../css/app.css&quot;</span>&gt;</span>
+            
+                <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;preload&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;[BASE-URL]/piio-gallery.js&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;script&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;[BASE-URL]/piio-gallery.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+                </div>
+              </code>
+            </pre>
+          </div>
+          <div class="mb-16">
+            <h3 id="set-up-your-html-markup" class="mb-2 text-xl font-semibold text-gray-700">2. Set up your HTML markup</h3>
+            <p class="leading-7">
+              No special markup is needed to setup the HTML code. 
+              <br>
+              Just wrap your elements inside a container element and assign an id value to it, which will be required as a parameter when initializing the gallery.
+              If desired, each <code>&lt;img&gt;</code> tag can be placed inside a <code>&lt;div&gt;</code>, an <code>&lt;a&gt;</code> tag or a <code>&lt;span&gt;</code> tag.
+            </p>
+            <p class="mt-4 leading-7">
+              In order to get lazy loading and better performance, instead of placing your images' urls inside the <code>src</code> attribute, place them within a <code>data-image</code> attribute.
+            </p>
+            <pre>
+              <code class="language-html">
+                <div> 
+                  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/myimage.png&quot;</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/myimage.png&quot;</span>&gt;</span>
+                </div>
+              </code>
+            </pre>
+            <div class="mb-6">
+              <h4 id="what-to-put-on-the-src-attribute-of-your-img-tags" class="mt-6 text-md font-semibold text-gray-700">What to put on the <code>src</code> attribute of your <code>img</code> tags</h4>
+              <p class="leading-7">The <code>src</code> attribute needs to be present on your <code>img</code> tags in order to have a valid HTML structure and should not be empty.</p>
+              <p class="leading-7">In order to have a valid HTML structure and a successful integration, we need to add a small image code to the <code>src</code> attribute. Here is the code we are going to add:</p>
+              <pre >
+                <code class="language-html">
+                  <div>
+                    <span>
+                      src=&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;
+                    </span>  
+                  </div>
+                </code>
+              </pre>
+            </div>
+            <p class="leading-7">Now your html markup should look similar to the following code:</p>
+            <pre>
+              <code class="language-html">
+                <div>    
+                  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;piio-gallery&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                </div>
+              </code>
+            </pre>
+          </div>
+          <div class="mb-16">
+            <h3 id="variants" class="mb-2 text-xl font-semibold text-gray-700">3. If using Variants</h3>
+            <p class="leading-7">When using variants, gallery HTML markup should not have any children elements.</p>
+            <div class="mb-6">
+              <pre>
+                <code class="language-html">
+                  <div>    
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;piio-gallery&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                  </div>
+                </code>
+              </pre>
+            </div>
+            <p class="leading-7">
+              Alternatively, another HTML markup must be created. The idea is similar to the gallery container. All variant elements should be wrapped within a container element with an <code>id</code>, which will also be required to initialize the gallery.
+              Each list should be nested inside a container element with a <code>data-list</code> attribute in the variant HTML markup.
+              When using variants the <code>variantSelector</code> is required.</p>
+            </p>
+            <pre>
+              <code class="language-html">
+                <div>    
+                  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;piio-variants&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-list</span>=<span class="hljs-string">&quot;list-1&quot;</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/list-1/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/list-1/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/list-1/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-list</span>=<span class="hljs-string">&quot;list-2&quot;</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/list-2/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/list-2/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/list-2/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-list</span>=<span class="hljs-string">&quot;list-3&quot;</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/list-3/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/list-3/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-image</span>=<span class="hljs-string">&quot;/images/list-3/myimage.png&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                </div>
+              </code>
+            </pre>
+          </div>
+          <div class="mb-16">
+            <h3 id="initilize-your-gallery" class="mb-2 text-xl font-semibold text-gray-700">4. Initilize your Gallery</h3>
+            <p class="leading-7">To initialize your gallery you need to specify the following information in your script file or in an inline script tag before your closing <code>&lt;body&gt;</code> tag.</p>
+            <p><code>gallerySelector</code> is required.</p>
+            <pre>
+              <code class="language-javascript">
+                <div>    
+                  <span class="hljs-keyword">const</span> myGallery = piioGallery.init({
+                    <span class="hljs-attr">gallerySelector</span>: <span class="hljs-string">&quot;#piio-gallery&quot;</span>,
+                      ...
+                  });
+                  myGallery.render();
+                </div>
+              </code>
+            </pre>
+            <p class="leading-7">In order to <strong>customize</strong> your gallery you can check the available <strong>setting-parameters</strong> and add them as shown in the example below.</p>
+            <pre>
+              <code class="language-javascript">
+                <div>    
+                  <span class="hljs-keyword">const</span> myGallery = piioGallery.init({
+                  <span class="hljs-attr">gallerySelector</span>: <span class="hljs-string">&quot;#piio-gallery&quot;</span>,
+                  <span class="hljs-attr">variantSelector</span>: <span class="hljs-string">&quot;#piio-variants&quot;</span>,
+                  <span class="hljs-attr">piioDomainKey</span>: <span class="hljs-string">&quot;[domain-key]&quot;</span>,
+                  <span class="hljs-attr">transition</span>: <span class="hljs-string">&quot;fade&quot;</span>,
+                  <span class="hljs-attr">carouselStyle</span>: <span class="hljs-string">&quot;thumbnails&quot;</span>
+                });
+                myGallery.render();
+                </div>
+              </code>
+            </pre>
+          </div>
+        </div>
+      <div>
+        <h2 id="setting-parameters" class="text-3xl font-extrabold text-black mb-6">Setting Parameters</h2>
+        
+        <h3 id="required-parameters" class="my-2 text-xl font-semibold text-gray-400">Required Parameters</h3>
+        <div class="mb-12">
+          <table class="table-fixed">
+            <thead>
+              <tr>
+                <th class="w-1/6">Parameter</th>
+                <th class="w-1/6">Type</th>
+                <th class="w-4/6">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>gallerySelector</td>
+                <td>string</td>
+                <td>The id of the container element of the gallery. Example:  <code>&quot;#my-piio-gallery&quot;</code></td>
+              </tr>
+              <tr>
+                <td>variantSelector</td>
+                <td>string</td>
+                <td>The id of the container element of the variants. Example:  <code>&quot;#my-piio-variants&quot;</code></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mb-12">
+          <h3 id="general-parameters" class="my-2 text-xl font-semibold text-gray-400">General Parameters</h3>
+          <table class="table-fixed">
+            <thead>
+              <tr>
+                <th class="w-1/6">Parameter</th>
+                <th class="w-1/6">Type</th>
+                <th class="w-4/6">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>piioDomainKey</td>
+                <td>string</td>
+                <td>Your piio account name. It enables the gallery to work with piio image optimization. Example:  <code>&quot;abcd&quot;</code></td>
+              </tr>
+              <tr>
+                <td>themeProps</td>
+                <td><a class="text-blue-600" href="#IThemePropsOptions">IThemePropsOptions</a></td>
+                <td>Object that overrides the default theme colors.</td>
+              </tr>
+              <tr>
+                <td>transition</td>
+                <td>string</td>
+                <td>The transition effect between slides. Available options: <code>&quot;slide&quot;, &quot;fade&quot;, &quot;none&quot;</code>.  <strong>Default:</strong> <code>&quot;slide&quot;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mb-12">
+          <h3 id="main-slider-parameters" class="my-2 text-xl font-semibold text-gray-400">Main Slider Parameters</h3>
+          <table class="table-fixed">
+            <thead>
+              <tr>
+                <th class="w-1/6">Parameter</th>
+                <th class="w-1/6">Type</th>
+                <th class="w-4/6">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>aspectRatio</td>
+                <td>string or object</td>
+                <td>The aspect ratio of the main slider. Example-1:  <code>&quot;3:2&quot;</code> Example-2: <code>{ height: 400px}</code>.  <strong>Default:</strong> <code>&quot;square&quot;</code></td>
+              </tr>
+              <tr>
+                <td>mainNavigation</td>
+                <td>string</td>
+                <td>The aspect of the navigation buttons on the main slider. Available options: <code>&quot;rectangle&quot;, &quot;square&quot;, &quot;circle&quot;, &quot;radius&quot;, &quot;none&quot;</code>.  <strong>Default:</strong> <code>&quot;rectangle&quot;</code></td>
+              </tr>
+              <tr>
+                <td>zoomProps</td>
+                <td><a class="text-blue-600" href="IZoomPropsOptions">IZoomPropsOptions</a></td>
+                <td>Object that overrides the default zoom properties.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mb-12">
+          <h3 id="carousel-parameters" class="my-2 text-xl font-semibold text-gray-400">Carousel Parameters</h3>
+          <table class="table-fixed">
+            <thead>
+              <tr>
+                <th class="w-1/6">Parameter</th>
+                <th class="w-1/6">Type</th>
+                <th class="w-4/6">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>carouselOffset</td>
+                <td>number</td>
+                <td>It's the space between the main slider and the carousel. It's measured in pixels.  <strong>Default:</strong> <code>15</code></td>
+              </tr>
+              <tr>
+                <td>carouselPosition</td>
+                <td>string</td>
+                <td>It's the location of the carousel relative to the main slider. Available options: <code>&quot;left&quot;, &quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;</code>.  <strong>Default:</strong> <code>&quot;bottom&quot;</code></td>
+              </tr>
+              <tr>
+                <td>carouselStyle</td>
+                <td>string</td>
+                <td>It's the display style of the carousel. Available options: <code>&quot;thumbnails&quot;, &quot;indicators&quot;, &quot;none&quot;</code>.  <strong>Default:</strong> <code>&quot;thumbnails&quot;</code></td>
+              </tr>
+              <tr>
+                <td>indicatorProps</td>
+                <td><a class="text-blue-600" href="IIndicatorPropsOptions">IIndicatorPropsOptions</a></td>
+                <td>Object that overrides the default styles of the indicators. It's applied when <code>carouselStyle: &quot;indicators&quot;</code>.</td>
+              </tr>
+              <tr>
+                <td>thumbnailProps</td>
+                <td><a class="text-blue-600" href="IThumbnailPropsOptions">IThumbnailPropsOptions</a></td>
+                <td>Object that overrides the default styles of the thumbnails. It's applied when <code>carouselStyle: &quot;thumbnails&quot;</code>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mb-12">
+          <h3 id="responsive-parameters" class="my-2 text-xl font-semibold text-gray-400">Responsive Parameters</h3>
+        <table class="table-fixed">
+          <thead>
+            <tr>
+              <th class="w-1/6">Parameter</th>
+              <th class="w-1/6">Type</th>
+              <th class="w-4/6">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>responsive</td>
+              <td><a class="text-blue-600" href="IResponsive">IResponsive</a></td>
+              <td>Object that enables different gallery settings according to the device.</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="mb-12">
+          <h3 id="objects" class="my-4 text-xl font-semibold text-gray-400">Objects</h3>
+          <h4 id="ithemepropsoptions" class="my-2 text-md font-semibold text-gray-400">IThemePropsOptions</h4>
+          <table class="table-fixed mb-4">
+            <thead>
+              <tr>
+                <th class="w-1/6">Parameter</th>
+                <th class="w-1/6">Type</th>
+                <th class="w-4/6">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>background</td>
+                <td>string</td>
+                <td>Overrides the background color of the theme. Colors must be specified in HSL, HSLA.</td>
+              </tr>
+              <tr>
+                <td>color</td>
+                <td>string</td>
+                <td>Overrides the main color of the theme. Colors must be specified in HSL, HSLA.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Example:</p>
+          <pre>
+            <code class="language-javascript">
+              <div>
+                themeProps: {
+                  <span class="hljs-attr">background</span>: <span class="hljs-string">&quot;hsla(234, 76%, 50%, 1)&quot;</span>,
+                  <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;hsla(0, 100%, 100%, 1)&quot;</span>,
+                }
+              </div>
+            </code>
+          </pre>
+        </div>
+        <div class="mb-12">
+          <h4 id="izoompropsoptions" class="my-2 text-md font-semibold text-gray-400">IZoomPropsOptions</h4>
+          <table class="table-fixed mb-4">
+            <thead>
+              <tr>
+                <th class="w-1/6">Parameter</th>
+                <th class="w-1/6">Type</th>
+                <th class="w-4/6">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>position</td>
+                <td>string</td>
+                <td>Overrides the default position of the flyout zoom. Only works when <code>zoomProps.type === &quot;flyout&quot;</code>.  Available options: <code>&quot;left&quot;, &quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;</code>.  <strong>Default:</strong> <code>&quot;right&quot;</code></td>
+              </tr>
+              <tr>
+                <td>ratio</td>
+                <td>number</td>
+                <td>Sets the ratio of the image that will be zoomed referenced to the main slider image.   <strong>Default:</strong> <code>2</code></td>
+              </tr>
+              <tr>
+                <td>type</td>
+                <td>string</td>
+                <td>Sets the type of zoom to use. Available options: <code>&quot;inline&quot;, &quot;flyout&quot;, &quot;popup&quot;, &quot;none&quot;</code>.  <strong>Default:</strong> <code>&quot;inline&quot;</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Example:</p>
+          <pre>
+            <code class="language-javascript">
+              <div>
+                zoomProps: {
+                  <span class="hljs-attr">position</span>: <span class="hljs-string">&quot;left&quot;</span>,
+                  <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;flyout&quot;</span>,
+                },
+              </div>
+            </code>
+          </pre>
+        </div>
+        <div class="mb-12">
+          <h4 id="iindicatorpropsoptions" class="my-2 text-md font-semibold text-gray-400">IIndicatorPropsOptions</h4>
+          <p class="italic text-sm mb-4">*Only works when <code>carouselStyle: &quot;indicators&quot;</code></p>
+          <table class="table-fixed mb-4">
+            <thead>
+              <tr>
+                <th class="w-1/6">Parameter</th>
+                <th class="w-1/6">Type</th>
+                <th class="w-4/6">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>shape</td>
+                <td>string</td>
+                <td>Overrides the default shape of the indicators. Available options: <code>&quot;circle&quot;, &quot;square&quot;, &quot;radius&quot;, &quot;line&quot;</code>.  <strong>Default:</strong> <code>&quot;circle&quot;</code></td>
+              </tr>
+              <tr>
+                <td>size</td>
+                <td>number</td>
+                <td>Overrides the default size of the indicators in pixels. <strong>Default:</strong> <code>13</code></td>
+              </tr>
+              <tr>
+                <td>spacing</td>
+                <td>number</td>
+                <td>Overrides the default margin of indicators in pixels. <strong>Default:</strong> <code>6</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Example:</p>
+          <pre>
+            <code class="language-javascript">
+              <div>
+                indicatorProps: {
+                  <span class="hljs-attr">shape</span>: <span class="hljs-string">&quot;circle&quot;</span> | <span class="hljs-string">&quot;square&quot;</span> | <span class="hljs-string">&quot;radius&quot;</span> | <span class="hljs-string">&quot;line&quot;</span>,
+                  <span class="hljs-attr">size</span>: <span class="hljs-number">13</span>,
+                  <span class="hljs-attr">spacing</span>: <span class="hljs-number">6</span>,
+                },
+              </div>
+            </code>
+          </pre>
+        </div>
+        <div class="mb-12">
+          <h4 id="ithumbnailpropsoptions" class="my-2 text-md font-semibold text-gray-400">IThumbnailPropsOptions</h4>
+          <p class="italic text-sm mb-4">*Only works when <code>carouselStyle: &quot;thumbnails&quot;</code></p>
+          <table class="table-fixed mb-4">
+            <thead>
+              <tr>
+                <th class="w-1/6">Parameter</th>
+                <th class="w-1/6">Type</th>
+                <th class="w-4/6">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>height</td>
+                <td>number</td>
+                <td>Sets the height of each thumbnail in pixels.  <strong>Default:</strong> <code>70</code></td>
+              </tr>
+              <tr>
+                <td>margin</td>
+                <td>number</td>
+                <td>Sets the margin right of each tumbnail in pixels.  <strong>Default:</strong> <code>10</code></td>
+              </tr>
+              <tr>
+                <td>navigationShape</td>
+                <td>string</td>
+                <td>Sets the shape of the carousel navigation buttons. Available options: <code>&quot;rectangle&quot;, &quot;square&quot; ,&quot;circle&quot; ,&quot;radius&quot;, &quot;none&quot;</code>. <strong>Default:</strong> <code>&quot;rectangle&quot;</code></td>
+              </tr>
+              <tr>
+                <td>selectedBorderPosition</td>
+                <td>string</td>
+                <td>Sets the border position of the selected Thumbnail. Only works if <code>selectedStyle: &quot;border&quot;</code>. Available options: <code>&quot;left&quot;, &quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;all&quot;</code>. <strong>Default:</strong> <code>&quot;all&quot;</code></td>
+              </tr>
+              <tr>
+                <td>selectedBorderWidth</td>
+                <td>number</td>
+                <td>Sets the border width in pixels. Only works if <code>selectedStyle: &quot;border&quot;</code>. <strong>Default:</strong> <code>3</code></td>
+              </tr>
+              <tr>
+                <td>selectedStyle</td>
+                <td>string</td>
+                <td>Sets the displays style of the selected thumbnail. <strong>Default:</strong> <code>&quot;overlay&quot;</code></td>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td>number</td>
+                <td>Sets the width of each thumbnail in pixels.  <strong>Default:</strong> <code>70</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Example:</p>
+          <pre>
+            <code class="language-javascript">
+              <div> 
+                thumbnailProps: {
+                  <span class="hljs-attr">height</span>: <span class="hljs-number">80</span>,
+                  <span class="hljs-attr">margin</span>: <span class="hljs-number">15</span>,
+                  <span class="hljs-attr">navigationShape</span>: <span class="hljs-string">&quot;circle&quot;</span>,
+                  <span class="hljs-attr">selectedBorderPosition</span>: <span class="hljs-string">&quot;all&quot;</span>,
+                  <span class="hljs-attr">selectedBorderWidth</span>: <span class="hljs-number">4</span>,
+                  <span class="hljs-attr">selectedStyle</span>: <span class="hljs-string">&quot;border&quot;</span>,
+                  <span class="hljs-attr">width</span>: <span class="hljs-number">120</span>,
+                },
+              </div>
+            </code>
+          </pre>
+        </div>
+        
+        <div class="mb-12">
+          <h4 id="iresponsive" class="my-2 text-md font-semibold text-gray-400">IResponsive</h4>
+          <table class="table-fixed mb-4">
+            <thead>
+              <tr>
+                <th class="w-1/6">Parameter</th>
+                <th class="w-1/6">Type</th>
+                <th class="w-4/6">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>tablet</td>
+                <td>Object</td>
+                <td>All Main Slider parameters or Carousel parameters.</td>
+              </tr>
+              <tr>
+                <td>mobile</td>
+                <td>Object</td>
+                <td>All Main Slider parameters or Carousel parameters.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Example:</p>
+          <pre>
+            <code class="language-javascript">
+              <div>
+                responsive: {
+                  <span class="hljs-attr">tablet</span>:{
+                    <span class="hljs-attr">carouselPosition</span>: <span class="hljs-string">&quot;right&quot;</span>,
+                    <span class="hljs-attr">carouselStyle</span>: <span class="hljs-string">&quot;indicators&quot;</span>,
+                    <span class="hljs-attr">mainNavigation</span>: <span class="hljs-string">&quot;rectangle&quot;</span>,
+                    <span class="hljs-attr">zoomProps</span>: {
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;popup&quot;</span>,
+                    },
+                  },
+                  <span class="hljs-attr">mobile</span>:{
+                    <span class="hljs-attr">carouselPosition</span>: <span class="hljs-string">&quot;left&quot;</span>,
+                    <span class="hljs-attr">carouselStyle</span>: <span class="hljs-string">&quot;none&quot;</span>,
+                    <span class="hljs-attr">mainNavigation</span>: <span class="hljs-string">&quot;circle&quot;</span>,
+                    <span class="hljs-attr">zoomProps</span>: {
+                      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;inline&quot;</span>,
+                    },
+                  }
+                },
+              </div>
+            </code>
+          </pre>
+        </div>
+      </div> 
+    </div>
+      
+      
     </section>
   </div>
   <style media="screen">
     body::-webkit-scrollbar {
       display: none;
     }
-    #piio-gallery-hero{
-      width: 100vw;
-    }
-    #piio-gallery-hero .gallery-container .main-img .main-container .main-wrapper div img {
-      object-fit: cover;
-      object-position: top center;
-    }
-    #piio-gallery-hero .gallery-container .main-img .main-container .main-wrapper div .woman-wearing-stripes{
-      object-position: top right;
-    }
     .copy-to-clipboard-button{
       padding: .4rem .5rem !important;
       color: white !important;
       margin: 0.5em 0.5em !important;
     }
-  </style>
-  <script type="text/javascript">
-    const options = {
-      aspectRatio: {
-        height: 650,
-      }, 
-      carouselStyle: "none",
-      mainNavigation: "rectangle",
-      gallerySelector: "#piio-gallery-hero",
-      themeProps: {
-        background: "hsl(238, 88%, 50%)",
-        color: "hsla(0, 100%, 100%, 1)",
-      },
-      transition: "slide",
-      zoomProps: {
-        type: "none",
-      },
-      responsive: {
-        tablet: {
-          aspectRatio: {
-            height: 600,
-          },
-          carouselStyle: "none",
-          mainNavigation: "rectangle",
-        },
-        mobile: {
-          aspectRatio: {
-            height: 500,
-          },
-          carouselStyle: "none",
-          mainNavigation: "rectangle",
-        }
-      }
-    };
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
 
-    const g = piioGallery.init(options);
-    g.render();
-  </script>
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #c4c3c325;
+    }
+  </style>
 </body>
 </html>
