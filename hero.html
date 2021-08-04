@@ -84,80 +84,86 @@
   </section>
   <div class="max-w-7xl px-4 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
     <section id="code" class="px-4 mt-16 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
-      <pre>
-        <code class="language-html">
-          // HTML
-            &lt;div id="piio-gallery-hero"&gt;
-              &lt;img data-image="/piio-gallery-demo/img/hero/woman-wearing-stripes.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" 
-                alt="woman-wearing-stripes" class="image"&gt;
-              &lt;img data-image="/piio-gallery-demo/img/hero/fashion-toronto-watch.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" 
-                alt="fashion-toronto-watch" class="image"&gt;
-              &lt;img data-image="/piio-gallery-demo/img/hero/father-daughter-fashion.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" 
-                alt="father-daughter-fashion" class="image"&gt;
-              &lt;img data-image="/piio-gallery-demo/img/hero/woman-poses-against-blue.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" 
-                 alt="woman-poses-against-blue" class="image"&gt;
-            &lt;/div&gt;
-        </code>
-      </pre>
-      <pre>
-        <code class="language-css">
-          // Css 
-          <style media="screen">
-            #piio-gallery-hero{
-              width: 100%;
-            }
-            #piio-gallery-hero .gallery-container .main-img .main-container .main-wrapper div img {
-              object-fit: cover;
-              object-position: top center;
-            }
-            #piio-gallery-hero .gallery-container .main-img .main-container .main-wrapper div .woman-wearing-stripes{
-              object-position: top right;
-            }
-          </style>
-        </code>
-      </pre>
-      <pre>
-        <code class="language-javascript">
-          // Javascript
-          <script type="text/plain" class="language-javascript">
-            const options = {
-              aspectRatio: {
-                height: 650,
-              }, 
-              carouselStyle: "none",
-              mainNavigation: "rectangle",
-              gallerySelector: "#piio-gallery-hero",
-              themeProps: {
-                background: "hsl(238, 88%, 50%)",
-                color: "hsla(0, 100%, 100%, 1)",
-              },
-              transition: "slide",
-              zoomProps: {
-                type: "none",
-              },
-              responsive: {
-                tablet: {
-                  aspectRatio: {
-                    height: 600,
-                  },
-                  carouselStyle: "none",
-                  mainNavigation: "rectangle",
-                },
-                mobile: {
-                  aspectRatio: {
-                    height: 500,
-                  },
-                  carouselStyle: "none",
-                  mainNavigation: "rectangle",
-                }
+      <div class="mb-16">
+        <pre>
+          <code class="language-html">
+            // HTML
+              &lt;div id="piio-gallery-hero"&gt;
+                &lt;img data-image="/piio-gallery-demo/img/hero/woman-wearing-stripes.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" 
+                  alt="woman-wearing-stripes" class="image"&gt;
+                &lt;img data-image="/piio-gallery-demo/img/hero/fashion-toronto-watch.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" 
+                  alt="fashion-toronto-watch" class="image"&gt;
+                &lt;img data-image="/piio-gallery-demo/img/hero/father-daughter-fashion.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" 
+                  alt="father-daughter-fashion" class="image"&gt;
+                &lt;img data-image="/piio-gallery-demo/img/hero/woman-poses-against-blue.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" 
+                   alt="woman-poses-against-blue" class="image"&gt;
+              &lt;/div&gt;
+          </code>
+        </pre>
+      </div>
+      <div class="mb-16">
+        <pre>
+          <code class="language-css">
+            // Css 
+            <style media="screen">
+              #piio-gallery-hero{
+                width: 100%;
               }
-            };
-        
-            const g = piioGallery.init(options);
-            g.render();
-          </script>
-        </code>
-      </pre>
+              #piio-gallery-hero .gallery-container .main-img .main-container .main-wrapper div img {
+                object-fit: cover;
+                object-position: top center;
+              }
+              #piio-gallery-hero .gallery-container .main-img .main-container .main-wrapper div .woman-wearing-stripes{
+                object-position: top right;
+              }
+            </style>
+          </code>
+        </pre>
+      </div>
+      <div class="mb-16">
+        <pre>
+          <code class="language-javascript">
+            // Javascript
+            <script type="text/plain" class="language-javascript">
+              const options = {
+                aspectRatio: {
+                  height: 650,
+                }, 
+                carouselStyle: "none",
+                mainNavigation: "rectangle",
+                gallerySelector: "#piio-gallery-hero",
+                themeProps: {
+                  background: "hsl(238, 88%, 50%)",
+                  color: "hsla(0, 100%, 100%, 1)",
+                },
+                transition: "slide",
+                zoomProps: {
+                  type: "none",
+                },
+                responsive: {
+                  tablet: {
+                    aspectRatio: {
+                      height: 600,
+                    },
+                    carouselStyle: "none",
+                    mainNavigation: "rectangle",
+                  },
+                  mobile: {
+                    aspectRatio: {
+                      height: 500,
+                    },
+                    carouselStyle: "none",
+                    mainNavigation: "rectangle",
+                  }
+                }
+              };
+          
+              const g = piioGallery.init(options);
+              g.render();
+            </script>
+          </code>
+        </pre>
+      </div>
     </section>
   </div>
   <style media="screen">

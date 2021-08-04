@@ -92,116 +92,122 @@
       </div>
     </section>
     <section id="code" class="px-4 mt-16 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
-      <pre>
-        <code class="language-html">
-          // HTML
-            &lt;div id="piio-gallery-variants"&gt;
-            &lt;/div&gt;
-            &lt;div id="piio-variants"&gt;
-              &lt;button class="btn-v bg-red-500" data-list="list-2"&gt;
-                &lt;div class="d-none"&gt;
-                  &lt;img data-image="/piio-gallery-demo/img/variants/womens-red-t-shirt.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
-                  &lt;img data-image="/piio-gallery-demo/img/variants/red-top-with-pocket.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
-                  &lt;img data-image="/piio-gallery-demo/img/variants/red-and-navy-tee-sleeve.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
-                &lt;/div&gt;
-              &lt;/button&gt;
-              &lt;button class="btn-v bg-gray-50" data-list="list-1"&gt;
-                &lt;div class="d-none"&gt;
-                  &lt;img data-image="/piio-gallery-demo/img/variants/ladies-white-t-shirt.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
-                  &lt;img data-image="/piio-gallery-demo/img/variants/simple-t-shirt-back.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
-                  &lt;img data-image="/piio-gallery-demo/img/variants/white-t-shirt-with-colored-edges.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
-                &lt;/div&gt;
-              &lt;/button&gt;
-            &lt;/div&gt;
-        </code>
-      </pre>
-      <pre>
-        <code class="language-css">
-          // Css 
-          <style media="screen">
-            #piio-gallery-variants{
-              width: 100%;
-              margin: 30px auto;
-            }
-            .btn-v{
-              height: 36px;
-              width: 36px;
-              border-radius: 50%;
-              padding: 2px;
-              box-shadow: 0px 0px 6px 0px rgb(0 0 0 / 30%);
-              border: 2px solid #ffffffe7;
-              margin: 10px;
-              background-size: 100% 100%;
-            }
-            #piio-variants{
-              display: flex;
-              justify-content: center;
-            }
-            @media (min-width: 1024px) { 
+      <div class="mb-16">
+        <pre>
+          <code class="language-html">
+            // HTML
+              &lt;div id="piio-gallery-variants"&gt;
+              &lt;/div&gt;
+              &lt;div id="piio-variants"&gt;
+                &lt;button class="btn-v bg-red-500" data-list="list-2"&gt;
+                  &lt;div class="d-none"&gt;
+                    &lt;img data-image="/piio-gallery-demo/img/variants/womens-red-t-shirt.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
+                    &lt;img data-image="/piio-gallery-demo/img/variants/red-top-with-pocket.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
+                    &lt;img data-image="/piio-gallery-demo/img/variants/red-and-navy-tee-sleeve.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
+                  &lt;/div&gt;
+                &lt;/button&gt;
+                &lt;button class="btn-v bg-gray-50" data-list="list-1"&gt;
+                  &lt;div class="d-none"&gt;
+                    &lt;img data-image="/piio-gallery-demo/img/variants/ladies-white-t-shirt.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
+                    &lt;img data-image="/piio-gallery-demo/img/variants/simple-t-shirt-back.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
+                    &lt;img data-image="/piio-gallery-demo/img/variants/white-t-shirt-with-colored-edges.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"&gt;
+                  &lt;/div&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+          </code>
+        </pre>
+      </div>
+      <div class="mb-16">
+        <pre>
+          <code class="language-css">
+            // Css 
+            <style media="screen">
               #piio-gallery-variants{
-              width: 75%;
+                width: 100%;
+                margin: 30px auto;
               }
-            }
-          </style>
-        </code>
-      </pre>
-      <pre>
-        <code class="language-javascript">
-          // Javascript
-          <script script type="text/plain" class="language-javascript">
-            const options = {
-              aspectRatio: "3:2", 
-              carouselStyle: "thumbnails",
-              carouselOffset: 30,
-              carouselPosition: "left",
-              mainNavigation: "rectangle",
-              gallerySelector: "#piio-gallery-variants",
-              variantSelector: "#piio-variants",
-              themeProps: {
-                background: "hsl(180, 1%, 14%)",
-                color: "hsla(0, 100%, 100%, 1)",
-              },
-              transition: "slide",
-              thumbnailProps: {
-                height: 80,
-                margin: 10,
-                navigationShape: "rectangle",
-                selectedBorderPosition: "all",
-                selectedBorderWidth: 4,
-                selectedStyle: "border",
-                width: 120,
-              },
-              zoomProps: {
-                type: "inline",
-              },
-              responsive: {
-                mobile: {
-                  aspectRatio: "3:2", 
-                  carouselStyle: "thumbnails",
-                  carouselOffset: 10,
-                  carouselPosition: "bottom",
-                  mainNavigation: "rectangle",
-                  thumbnailProps: {
-                    height: 80,
-                    margin: 10,
-                    navigationShape: "rectangle",
-                    selectedBorderPosition: "all",
-                    selectedBorderWidth: 4,
-                    selectedStyle: "border",
-                    width: 120,
-                  },
-                  zoomProps: {
-                    type: "inline",
-                  },
+              .btn-v{
+                height: 36px;
+                width: 36px;
+                border-radius: 50%;
+                padding: 2px;
+                box-shadow: 0px 0px 6px 0px rgb(0 0 0 / 30%);
+                border: 2px solid #ffffffe7;
+                margin: 10px;
+                background-size: 100% 100%;
+              }
+              #piio-variants{
+                display: flex;
+                justify-content: center;
+              }
+              @media (min-width: 1024px) { 
+                #piio-gallery-variants{
+                width: 75%;
                 }
               }
-            };
-        
-            const g = piioGallery.init(options);
-            g.render();
-          </script>
-        </code>
-      </pre>
+            </style>
+          </code>
+        </pre>
+      </div>
+      <div class="mb-16">
+        <pre>
+          <code class="language-javascript">
+            // Javascript
+            <script script type="text/plain" class="language-javascript">
+              const options = {
+                aspectRatio: "3:2", 
+                carouselStyle: "thumbnails",
+                carouselOffset: 30,
+                carouselPosition: "left",
+                mainNavigation: "rectangle",
+                gallerySelector: "#piio-gallery-variants",
+                variantSelector: "#piio-variants",
+                themeProps: {
+                  background: "hsl(180, 1%, 14%)",
+                  color: "hsla(0, 100%, 100%, 1)",
+                },
+                transition: "slide",
+                thumbnailProps: {
+                  height: 80,
+                  margin: 10,
+                  navigationShape: "rectangle",
+                  selectedBorderPosition: "all",
+                  selectedBorderWidth: 4,
+                  selectedStyle: "border",
+                  width: 120,
+                },
+                zoomProps: {
+                  type: "inline",
+                },
+                responsive: {
+                  mobile: {
+                    aspectRatio: "3:2", 
+                    carouselStyle: "thumbnails",
+                    carouselOffset: 10,
+                    carouselPosition: "bottom",
+                    mainNavigation: "rectangle",
+                    thumbnailProps: {
+                      height: 80,
+                      margin: 10,
+                      navigationShape: "rectangle",
+                      selectedBorderPosition: "all",
+                      selectedBorderWidth: 4,
+                      selectedStyle: "border",
+                      width: 120,
+                    },
+                    zoomProps: {
+                      type: "inline",
+                    },
+                  }
+                }
+              };
+          
+              const g = piioGallery.init(options);
+              g.render();
+            </script>
+          </code>
+        </pre>
+      </div>
     </section>
   </div>
   <style media="screen">

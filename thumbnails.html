@@ -88,99 +88,105 @@
       </div>
     </section>
     <section id="code" class="px-4 mt-20 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
-      <pre>
-        <code class="language-html">
-          // HTML
-            &lt;div id="piio-gallery-thumbnails">
-              &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/line-of-earbud-cases.jpg"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="line-of-earbud-cases.jpg"&gt;
-              &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/earbud-circle.jpg"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="earbud-circle"&gt;
-              &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/yellow-earbuds-on-white.jpg"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="yellow-earbuds-on-white"&gt;
-              &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/red-earbuds-on-red-surface.jpg"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-earbuds-on-red-surface"&gt;
-              &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/red-earbuds-and-smartphone.jpg"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-earbuds-and-smartphone"&gt;
-              &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/red-earbuds-in-case.jpg"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-earbuds-in-case"&gt;
-              &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/close-up-of-red-earbuds.jpg"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="close-up-of-red-earbuds"&gt;
-            &lt;/div&gt;
-        </code>
-      </pre>
-      <pre>
-        <code class="language-css">
-          // Css 
-          <style media="screen">
-            #piio-gallery-thumbnails{
-              width: 100%;
-              margin: 30px auto;
-            }
-            @media (min-width: 1024px) { 
+      <div class="mb-16">
+        <pre>
+          <code class="language-html">
+            // HTML
+              &lt;div id="piio-gallery-thumbnails">
+                &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/line-of-earbud-cases.jpg"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="line-of-earbud-cases.jpg"&gt;
+                &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/earbud-circle.jpg"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="earbud-circle"&gt;
+                &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/yellow-earbuds-on-white.jpg"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="yellow-earbuds-on-white"&gt;
+                &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/red-earbuds-on-red-surface.jpg"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-earbuds-on-red-surface"&gt;
+                &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/red-earbuds-and-smartphone.jpg"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-earbuds-and-smartphone"&gt;
+                &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/red-earbuds-in-case.jpg"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="red-earbuds-in-case"&gt;
+                &lt;img class="image" data-image="/piio-gallery-demo/img/thumbnails/close-up-of-red-earbuds.jpg"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA" alt="close-up-of-red-earbuds"&gt;
+              &lt;/div&gt;
+          </code>
+        </pre>
+      </div>
+      <div class="mb-16">
+        <pre>
+          <code class="language-css">
+            // Css 
+            <style media="screen">
               #piio-gallery-thumbnails{
-              width: 75%;
+                width: 100%;
+                margin: 30px auto;
               }
-            }
-          </style>
-        </code>
-      </pre>
-      <pre>
-        <code class="language-javascript">
-          // Javascript
-          <script script type="text/plain" class="language-javascript">
-            const options = {
-              aspectRatio: "3:2", 
-              carouselStyle: "thumbnails",
-              carouselPosition: "right",
-              carouselOffset: 15,
-              mainNavigation: "radius",
-              gallerySelector: "#piio-gallery-thumbnails",
-              themeProps: {
-                background: "hsla(50, 100%, 70%, 1)",
-                color: "hsla(0, 0%, 20%, 1)",
-              },
-              transition: "slide",
-              thumbnailProps: {
-                height: 80,
-                margin: 10,
-                navigationShape: "radius",
-                selectedBorderPosition: "all",
-                selectedBorderWidth: 4,
-                selectedStyle: "border",
-                width: 120,
-              },
-              zoomProps: {
-                type: "inline",
-              },
-              responsive: {
-                mobile: {
-                  aspectRatio: "3:2", 
-                  carouselStyle: "thumbnails",
-                  carouselOffset: 15,
-                  carouselPosition: "bottom",
-                  mainNavigation: "radius",
-                  thumbnailProps: {
-                    height: 80,
-                    margin: 10,
-                    navigationShape: "radius",
-                    selectedBorderPosition: "all",
-                    selectedBorderWidth: 4,
-                    selectedStyle: "border",
-                    width: 120,
-                  },
-                  zoomProps: {
-                    type: "inline",
-                  },
+              @media (min-width: 1024px) { 
+                #piio-gallery-thumbnails{
+                width: 75%;
                 }
               }
-            };
-        
-            const g = piioGallery.init(options);
-            g.render();
-          </script>
-        </code>
-      </pre>
+            </style>
+          </code>
+        </pre>
+      </div>
+      <div class="mb-16">
+        <pre>
+          <code class="language-javascript">
+            // Javascript
+            <script script type="text/plain" class="language-javascript">
+              const options = {
+                aspectRatio: "3:2", 
+                carouselStyle: "thumbnails",
+                carouselPosition: "right",
+                carouselOffset: 15,
+                mainNavigation: "radius",
+                gallerySelector: "#piio-gallery-thumbnails",
+                themeProps: {
+                  background: "hsla(50, 100%, 70%, 1)",
+                  color: "hsla(0, 0%, 20%, 1)",
+                },
+                transition: "slide",
+                thumbnailProps: {
+                  height: 80,
+                  margin: 10,
+                  navigationShape: "radius",
+                  selectedBorderPosition: "all",
+                  selectedBorderWidth: 4,
+                  selectedStyle: "border",
+                  width: 120,
+                },
+                zoomProps: {
+                  type: "inline",
+                },
+                responsive: {
+                  mobile: {
+                    aspectRatio: "3:2", 
+                    carouselStyle: "thumbnails",
+                    carouselOffset: 15,
+                    carouselPosition: "bottom",
+                    mainNavigation: "radius",
+                    thumbnailProps: {
+                      height: 80,
+                      margin: 10,
+                      navigationShape: "radius",
+                      selectedBorderPosition: "all",
+                      selectedBorderWidth: 4,
+                      selectedStyle: "border",
+                      width: 120,
+                    },
+                    zoomProps: {
+                      type: "inline",
+                    },
+                  }
+                }
+              };
+          
+              const g = piioGallery.init(options);
+              g.render();
+            </script>
+          </code>
+        </pre>
+      </div>
     </section>
   </div>
   <style media="screen">
